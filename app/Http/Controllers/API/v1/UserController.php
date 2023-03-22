@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API\v1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\v1\User\RegisterRequest;
+use App\Http\Requests\v1\RegisterRequest;
 use App\Services\v1\UserService;
 
 /**
