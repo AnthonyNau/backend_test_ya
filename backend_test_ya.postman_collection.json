@@ -1,0 +1,432 @@
+{
+	"info": {
+		"_postman_id": "433ebf2f-fa40-4105-8bed-6f09f4aad563",
+		"name": "bakent_test_ya",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21177004"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"email\": \"erty@vvbmail.com\",\n    \"password\": \"lsjdkc678QQ\",\n    \"portfolio\":[\n   {\n      \"symbol\":\"AMZN\",\n      \"number_of_shares\":1.56897\n   },\n   {\n      \"symbol\":\"GOOGL\",\n      \"number_of_shares\":2.1\n   }\n]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/v1/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"email\": \"erty@vvbmail.com\",\n   \"password\": \"lsjdkc678QQ\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS92MS91c2VyL2xvZ2luIiwiaWF0IjoxNjc5NTgwOTAwLCJleHAiOjE2Nzk1ODQ1MDAsIm5iZiI6MTY3OTU4MDkwMCwianRpIjoiMURQcHNUSGVNTFk1YXJoNSIsInN1YiI6IjMwIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Ul_TIrMs9t9nBeVaB_zCqFkeWKqmJHKWKDXStGH6viw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tom\",\n    \"email\": \"tommail@mail.com\",\n    \"password\": \"qweRTY123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS92MS91c2VyL2xvZ2luIiwiaWF0IjoxNjc5NTgwOTAwLCJleHAiOjE2Nzk1ODQ1MDAsIm5iZiI6MTY3OTU4MDkwMCwianRpIjoiMURQcHNUSGVNTFk1YXJoNSIsInN1YiI6IjMwIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Ul_TIrMs9t9nBeVaB_zCqFkeWKqmJHKWKDXStGH6viw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tom\",\n    \"email\": \"tommail@mail.com\",\n    \"password\": \"qweRTY123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/v1/user/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Portfolio",
+			"item": [
+				{
+					"name": "Add portfolio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS92MS91c2VyL2xvZ2luIiwiaWF0IjoxNjc5NTcwMjU4LCJleHAiOjE2Nzk1NzM4NTgsIm5iZiI6MTY3OTU3MDI1OCwianRpIjoiSFN3T1U3S3UwQ3JrQjU4ZiIsInN1YiI6IjI2IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.yQIx0EX6-acsSN6PrujX-zJa2kyTAuillJhJLMFgSmw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n      \"symbol\":\"AAPL\",\n      \"number_of_shares\":1.56897\n   },\n   {\n      \"symbol\":\"GOOGL\",\n      \"number_of_shares\":2.1\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/v1/portfolio/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"v1",
+								"portfolio",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User portfolio",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS92MS91c2VyL2xvZ2luIiwiaWF0IjoxNjc5NTc5MzAxLCJleHAiOjE2Nzk1ODI5MDEsIm5iZiI6MTY3OTU3OTMwMSwianRpIjoicGNvRjQ0R0lEWE1SY3RaWCIsInN1YiI6IjI2IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.-ijfyKpQVD9ITTGLjSLhOIBpfitp0rVP2o07oSJto9s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n      \"symbol\":\"AAPL\",\n      \"number_of_share\":1.56897\n   },\n   {\n      \"symbol\":\"GOOGL\",\n      \"number_of_share\":2.1\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/v1/portfolio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"v1",
+								"portfolio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update portfolio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS92MS91c2VyL2xvZ2luIiwiaWF0IjoxNjc5NTM5MTQ5LCJleHAiOjE2Nzk1NDI3NDksIm5iZiI6MTY3OTUzOTE0OSwianRpIjoiRDlqSEtCOWxoenpoOTdTYSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.6_c4KMSsAW9NsRxng8bbGDRp7BwYve5q4h0YLAbxU2o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n   {\n      \"symbol\":\"AAPL\",\n      \"number_of_shares\":100.56897\n   }\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/v1/portfolio/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"v1",
+								"portfolio",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Import csv",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS92MS91c2VyL2xvZ2luIiwiaWF0IjoxNjc5NTM5MTQ5LCJleHAiOjE2Nzk1NDI3NDksIm5iZiI6MTY3OTUzOTE0OSwianRpIjoiRDlqSEtCOWxoenpoOTdTYSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.6_c4KMSsAW9NsRxng8bbGDRp7BwYve5q4h0YLAbxU2o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/anthony/Рабочий стол/data_set.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:80/api/v1/data-set/import",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"v1",
+						"data-set",
+						"import"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS92MS91c2VyL2xvZ2luIiwiaWF0IjoxNjc5NTc5MzAxLCJleHAiOjE2Nzk1ODI5MDEsIm5iZiI6MTY3OTU3OTMwMSwianRpIjoicGNvRjQ0R0lEWE1SY3RaWCIsInN1YiI6IjI2IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.-ijfyKpQVD9ITTGLjSLhOIBpfitp0rVP2o07oSJto9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n   {\n      \"symbol\":\"AAPL\",\n      \"date\":\"2022-01-13\"\n   }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/v1/report/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"v1",
+						"report",
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

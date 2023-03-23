@@ -13,6 +13,11 @@ class ReportController extends Controller
     {
     }
 
+    /**
+     * Get report
+     * @param ReportRequest $reportRequest
+     * @return array
+     */
     public function get(ReportRequest $reportRequest)
     {
 

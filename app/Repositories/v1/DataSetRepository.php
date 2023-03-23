@@ -3,7 +3,6 @@
 namespace App\Repositories\v1;
 
 use App\Models\DataSet;
-use App\Models\Portfolio;
 use Illuminate\Support\Facades\DB;
 
 class DataSetRepository
