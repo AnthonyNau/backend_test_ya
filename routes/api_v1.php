@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\v1\DataSetController;
 use App\Http\Controllers\API\v1\PortfolioController;
 use App\Http\Controllers\API\v1\UserController;
 use Illuminate\Support\Facades\Route;
@@ -18,11 +19,13 @@ Route::group(['middleware' => 'api', 'auth:api'], function () {
         Route::post('add', [PortfolioController::class, 'add']);
         Route::put('update', [PortfolioController::class, 'login']);
     });
-    Route::prefix('data-set')->name('data-set.')->group(function () {
-        Route::post('import', [PortfolioController::class, 'import']);
-    });
     Route::prefix('report')->name('report')->group(function () {
         Route::post('get', [PortfolioController::class, 'get']);
     });
 
+});
+Route::group(['middleware' => 'api'], function () {
+    Route::prefix('data-set')->name('data-set.')->group(function () {
+        Route::post('import', [DataSetController::class, 'import']);
+    });
 });
