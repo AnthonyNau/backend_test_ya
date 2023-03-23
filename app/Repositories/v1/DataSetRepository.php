@@ -7,15 +7,24 @@ use Illuminate\Support\Facades\DB;
 
 class DataSetRepository
 {
-    public function confirmSymbol($symbol)
+    /**
+     * @param $symbol
+     * @return false
+     */
+    public function confirmSymbol($symbol): bool
     {
         try {
-            return DataSet::where('symbol', $symbol)->firstOrFail();
+            DataSet::where('symbol', $symbol)->firstOrFail();
+            return true;
         } catch (\Exception) {
             return false;
         }
     }
 
+    /**
+     * @param $symbol
+     * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Query\Builder|object|null
+     */
     public function firstDataSetBySymbol($symbol)
     {
         return DB::table('data_sets')
@@ -24,6 +33,10 @@ class DataSetRepository
             ->first();
     }
 
+    /**
+     * @param $symbol
+     * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Query\Builder|object|null
+     */
     public function lastDataSetBySymbol($symbol)
     {
         return DB::table('data_sets')
@@ -32,6 +45,11 @@ class DataSetRepository
             ->first();
     }
 
+    /**
+     * @param $symbol
+     * @param $date
+     * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Query\Builder|object|null
+     */
     public function dataSetByDateSymbol($symbol, $date)
     {
         return DB::table('data_sets')

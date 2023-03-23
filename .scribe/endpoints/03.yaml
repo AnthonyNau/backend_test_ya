@@ -1,0 +1,50 @@
+name: Report
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/report/get
+    metadata:
+      groupName: Report
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get report'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer '
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      symbol:
+        name: symbol
+        description: ''
+        required: false
+        example: sapiente
+        type: string
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date.'
+        required: false
+        example: '2023-03-23T22:14:21'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      symbol: sapiente
+      date: '2023-03-23T22:14:21'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
