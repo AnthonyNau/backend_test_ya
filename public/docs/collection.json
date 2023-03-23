@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "add1863c-b180-49c5-a0e1-8947e7a87253",
+        "_postman_id": "78dcdfff-e498-4cc5-85a1-1c2df7526a12",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -300,7 +300,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ex",
+                                    "value": "excepturi",
                                     "description": "The ID of the update."
                                 }
                             ]
@@ -318,7 +318,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"symbol\":\"facilis\",\"number_of_shares\":32}"
+                            "raw": "{\"symbol\":\"ullam\",\"number_of_shares\":30}"
                         },
                         "description": "",
                         "auth": {
@@ -355,7 +355,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"symbol\":\"sapiente\",\"date\":\"2023-03-23T22:14:21\"}"
+                            "raw": "{\"symbol\":\"necessitatibus\",\"date\":\"2023-03-23T22:28:32\"}"
                         },
                         "description": "",
                         "auth": {
@@ -392,7 +392,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"quod\",\"email\":\"marilyne94@example.net\",\"password\":\"M|!d*;~A\\\\_Dx\",\"portfolio\":[{\"symbol\":\"ea\",\"number_of_shares\":18}]}"
+                            "raw": "{\"name\":\"aliquam\",\"email\":\"abdul.borer@example.org\",\"password\":\"2eQty'30%c]\",\"portfolio\":[{\"symbol\":\"rerum\",\"number_of_shares\":34}]}"
                         },
                         "description": "",
                         "auth": {
@@ -423,7 +423,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"rblock@example.com\",\"password\":\"p_Yil5]=Gr=qtH\"}"
+                            "raw": "{\"email\":\"smith.glennie@example.net\",\"password\":\"FZR6RH2^h_S=7vT\"}"
                         },
                         "description": "",
                         "auth": {

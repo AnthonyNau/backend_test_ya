@@ -284,11 +284,11 @@ paths:
                 symbol:
                   type: string
                   description: ''
-                  example: facilis
+                  example: ullam
                 number_of_shares:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 32
+                  example: 30
               required:
                 - symbol
                 - number_of_shares
@@ -298,7 +298,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the update.'
-        example: ex
+        example: excepturi
         required: true
         schema:
           type: string
@@ -342,11 +342,11 @@ paths:
                 symbol:
                   type: string
                   description: ''
-                  example: sapiente
+                  example: necessitatibus
                 date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2023-03-23T22:14:21'
+                  example: '2023-03-23T22:28:32'
       security: []
   /api/v1/user/register:
     post:
@@ -388,15 +388,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: quod
+                  example: aliquam
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: marilyne94@example.net
+                  example: abdul.borer@example.org
                 password:
                   type: string
                   description: 'Must match the regex /[a-z]/. Must match the regex /[A-Z]/. Must match the regex /[0-9]/. Must be at least 8 characters.'
-                  example: 'M|!d*;~A\_Dx'
+                  example: "2eQty'30%c]"
                 portfolio:
                   type: array
                   description: ''
@@ -408,11 +408,11 @@ paths:
                       symbol:
                         type: string
                         description: ''
-                        example: ea
+                        example: rerum
                       number_of_shares:
                         type: number
                         description: 'Must be at least 0.'
-                        example: 18
+                        example: 34
               required:
                 - name
                 - email
@@ -458,11 +458,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: rblock@example.com
+                  example: smith.glennie@example.net
                 password:
                   type: string
                   description: 'Must match the regex /[a-z]/. Must match the regex /[A-Z]/. Must match the regex /[0-9]/. Must be at least 8 characters.'
-                  example: 'p_Yil5]=Gr=qtH'
+                  example: FZR6RH2^h_S=7vT
               required:
                 - email
                 - password

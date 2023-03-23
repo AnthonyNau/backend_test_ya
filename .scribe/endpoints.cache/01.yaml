@@ -29,21 +29,21 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: quod
+        example: aliquam
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: marilyne94@example.net
+        example: abdul.borer@example.org
         type: string
         custom: []
       password:
         name: password
         description: 'Must match the regex /[a-z]/. Must match the regex /[A-Z]/. Must match the regex /[0-9]/. Must be at least 8 characters.'
         required: true
-        example: 'M|!d*;~A\_Dx'
+        example: "2eQty'30%c]"
         type: string
         custom: []
       portfolio:
@@ -58,24 +58,24 @@ endpoints:
         name: 'portfolio[].symbol'
         description: ''
         required: false
-        example: ea
+        example: rerum
         type: string
         custom: []
       'portfolio[].number_of_shares':
         name: 'portfolio[].number_of_shares'
         description: 'Must be at least 0.'
         required: false
-        example: 18
+        example: 34
         type: number
         custom: []
     cleanBodyParameters:
-      name: quod
-      email: marilyne94@example.net
-      password: 'M|!d*;~A\_Dx'
+      name: aliquam
+      email: abdul.borer@example.org
+      password: "2eQty'30%c]"
       portfolio:
         -
-          symbol: ea
-          number_of_shares: 18
+          symbol: rerum
+          number_of_shares: 34
     fileParameters: []
     responses: []
     responseFields: []
@@ -110,19 +110,19 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: rblock@example.com
+        example: smith.glennie@example.net
         type: string
         custom: []
       password:
         name: password
         description: 'Must match the regex /[a-z]/. Must match the regex /[A-Z]/. Must match the regex /[0-9]/. Must be at least 8 characters.'
         required: true
-        example: 'p_Yil5]=Gr=qtH'
+        example: FZR6RH2^h_S=7vT
         type: string
         custom: []
     cleanBodyParameters:
-      email: rblock@example.com
-      password: 'p_Yil5]=Gr=qtH'
+      email: smith.glennie@example.net
+      password: FZR6RH2^h_S=7vT
     fileParameters: []
     responses: []
     responseFields: []
