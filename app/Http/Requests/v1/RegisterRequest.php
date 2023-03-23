@@ -33,7 +33,7 @@ class RegisterRequest extends FormRequest
                 'regex:/[0-9]/',
             ],
             'portfolio.*.symbol' => 'string',
-            'portfolio.*.number_of_shares' => 'numeric',
+            'portfolio.*.number_of_shares' => 'numeric|min:0',
         ];
     }
 

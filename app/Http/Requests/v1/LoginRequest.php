@@ -4,7 +4,7 @@ namespace App\Http\Requests\v1;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ModifyPortfolioRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,15 @@ class ModifyPortfolioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'symbol' => 'string|required',
-            'number_of_shares' => 'numeric|required|min:0',
+            'email' => 'string|email|required',
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'regex:/[a-z]/',
+                'regex:/[A-Z]/',
+                'regex:/[0-9]/',
+            ],
         ];
     }
 }

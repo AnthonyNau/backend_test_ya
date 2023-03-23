@@ -11,6 +11,10 @@ class UserService
     {
     }
 
+    /**
+     * @param $data
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function handleRegister($data)
     {
         $data['password'] = Hash::make($data['password']);

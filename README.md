@@ -5,6 +5,7 @@
 - **run `composer install`**
 - **run `php artisan migrate`**
 - **run `php artisan queue:work` (need for import csv job)**
+- **run ` php artisan scribe:generate` for API documentation (http://localhost/docs/index.html)**
 
 At the root of the project there is a postman collection (backend_test_ya.postman_collection.json) and an example csv file for uploading (data_set_example.csv).
 ###Csv import is available for non-authorized user.

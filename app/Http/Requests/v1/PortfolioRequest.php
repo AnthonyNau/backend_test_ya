@@ -23,7 +23,7 @@ class PortfolioRequest extends FormRequest
     {
         return [
             '*.symbol' => 'string|required',
-            '*.number_of_shares' => 'numeric|required',
+            '*.number_of_shares' => 'numeric|required|min:0',
         ];
     }
 }

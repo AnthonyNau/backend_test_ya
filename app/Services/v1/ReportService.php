@@ -12,6 +12,10 @@ class ReportService
     {
     }
 
+    /**
+     * @param $data
+     * @return array
+     */
     public function handlerGet($data)
     {
         $userPortfolioSymbols = empty($data['symbol']) ? $this->portfolioRepository->getUserPortfolioSymbol(auth()->user()) : [$data['symbol']];
@@ -29,17 +33,27 @@ class ReportService
         return $report;
     }
 
+    /**
+     * @param $numberOfShares
+     * @param $firstDataSets
+     * @param $currentDataSets
+     * @return stdClass
+     */
     private function calculate($numberOfShares, $firstDataSets, $currentDataSets)
     {
         $result = new stdClass();
         $result->firstAvailableDateValue = $numberOfShares * $firstDataSets->price;
         $result->currentValue = $numberOfShares * $currentDataSets->price;
-        $result->changeDifvalue = $result->currentValue - $result->firstAvailableDateValue;
+        $result->changeDifValue = $result->currentValue - $result->firstAvailableDateValue;
         $result->changeDifPercent = ($result->currentValue - $result->firstAvailableDateValue) / $result->firstAvailableDateValue * 100;
 
         return $result;
     }
 
+    /**
+     * @param $portfolio
+     * @return stdClass
+     */
     private function calculateTotalPortfolioValue($portfolio)
     {
         $result = new stdClass();
@@ -55,7 +69,7 @@ class ReportService
         }
         $result->totalCurrentValue = $totalCurrentValue;
         $result->totalfirstAvailableDateValue = $totalFirstValue;
-        $result->changeDifvalue = $totalCurrentValue - $totalFirstValue;
+        $result->changeDifValue = $totalCurrentValue - $totalFirstValue;
         $result->changeDifPercent = ($totalCurrentValue - $totalFirstValue) / $totalFirstValue * 100;
 
         return $result;

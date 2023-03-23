@@ -12,6 +12,11 @@ class PortfolioService
     {
     }
 
+    /**
+     * @param $data
+     * @param $user
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function handleAdd($data, $user)
     {
         foreach ($data as $val) {
@@ -25,6 +30,11 @@ class PortfolioService
 
     }
 
+    /**
+     * @param $data
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function handlerModify($data, $id)
     {
         if (!$this->dataSetRepository->confirmSymbol($data['symbol'])) {
