@@ -91,11 +91,7 @@ class UserController extends Controller
      */
     public function register(RegisterRequest $registerRequest)
     {
-        $register = $this->userService->handleRegister($registerRequest->validated());
-        if (!$register) {
-            return response()->json(['error' => 'Something went wrong'], 500);
-        }
-        return response()->json(['message' => 'Registration is successful! Log in please.']);
+        return $this->userService->handleRegister($registerRequest->validated());
 
     }
 }

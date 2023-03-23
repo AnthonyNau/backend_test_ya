@@ -17,7 +17,7 @@ Route::prefix('user')->name('user.')->group(function () {
 Route::group(['middleware' => 'api', 'auth:api'], function () {
     Route::prefix('portfolio')->name('portfolio.')->group(function () {
         Route::post('add', [PortfolioController::class, 'add']);
-        Route::put('update', [PortfolioController::class, 'login']);
+        Route::put('update/{id}', [PortfolioController::class, 'update']);
     });
     Route::prefix('report')->name('report')->group(function () {
         Route::post('get', [PortfolioController::class, 'get']);

@@ -4,7 +4,7 @@ namespace App\Http\Requests\v1;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PortfolioRequest extends FormRequest
+class ModifyPortfolioRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,8 @@ class PortfolioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            '*.symbol' => 'string|required',
-            '*.number_of_shares' => 'numeric|required',
+            'symbol' => 'string|required',
+            'number_of_shares' => 'numeric|required',
         ];
     }
 }

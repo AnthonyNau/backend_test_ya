@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('symbol');
             $table->date('date');
-            $table->decimal('price');
+            $table->float('price', 10, 5);
             $table->timestamps();
         });
     }

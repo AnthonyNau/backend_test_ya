@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('symbol');
-            $table->integer('number_of_shares');
+            $table->float('number_of_shares', 10, 5);
             $table->timestamps();
         });
     }

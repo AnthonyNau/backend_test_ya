@@ -32,8 +32,11 @@ class RegisterRequest extends FormRequest
                 'regex:/[A-Z]/',
                 'regex:/[0-9]/',
             ],
+            'portfolio.*.symbol' => 'string',
+            'portfolio.*.number_of_shares' => 'numeric',
         ];
     }
+
     public function messages(): array
     {
         return array_merge(parent::messages(), [
