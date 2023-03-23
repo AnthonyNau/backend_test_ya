@@ -5,12 +5,13 @@ namespace App\Http\Controllers\API\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\v1\ModifyPortfolioRequest;
 use App\Http\Requests\v1\PortfolioRequest;
+use App\Repositories\v1\PortfolioRepository;
 use App\Services\v1\PortfolioService;
 
 
 class PortfolioController extends Controller
 {
-    public function __construct(private PortfolioService $portfolioService)
+    public function __construct(private PortfolioService $portfolioService, private PortfolioRepository $portfolioRepository)
     {
     }
 
@@ -24,7 +25,6 @@ class PortfolioController extends Controller
     {
         $data = $portfolioRequest->validated();
         return $this->portfolioService->handleAdd($data, auth()->user());
-
     }
 
     /**
@@ -37,5 +37,14 @@ class PortfolioController extends Controller
     {
         $data = $modifyPortfolioRequest->validated();
         return $this->portfolioService->handlerModify($data, $id);
+    }
+
+    /**
+     * Get User portfolio
+     * @return mixed
+     */
+    public function getPortfolio()
+    {
+        return $this->portfolioRepository->getUserPortfolio(auth()->user());
     }
 }

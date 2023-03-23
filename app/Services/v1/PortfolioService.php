@@ -2,19 +2,21 @@
 
 namespace App\Services\v1;
 
+use App\Models\DataSet;
 use App\Models\Portfolio;
+use App\Repositories\v1\DataSetRepository;
 use App\Repositories\v1\PortfolioRepository;
 
 class PortfolioService
 {
-    public function __construct(private PortfolioRepository $portfolioRepository)
+    public function __construct(private PortfolioRepository $portfolioRepository, private DataSetRepository $dataSetRepository)
     {
     }
 
     public function handleAdd($data, $user)
     {
         foreach ($data as $val) {
-            if (!$this->portfolioRepository->confirmSymbol($val['symbol'])) {
+            if (!$this->dataSetRepository->confirmSymbol($val['symbol'])) {
                 return response()->json(['message' => 'Wrong symbol for data set'], 422);
             }
             $val['user_id'] = $user->id;
@@ -26,7 +28,7 @@ class PortfolioService
 
     public function handlerModify($data, $id)
     {
-        if (!$this->portfolioRepository->confirmSymbol($data['symbol'])) {
+        if (!$this->dataSetRepository->confirmSymbol($data['symbol'])) {
             return response()->json(['message' => 'Wrong symbol for data set'], 422);
         }
         $portfolio = $this->portfolioRepository->getPortfolio($id);

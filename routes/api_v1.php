@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\v1\DataSetController;
 use App\Http\Controllers\API\v1\PortfolioController;
+use App\Http\Controllers\API\v1\ReportController;
 use App\Http\Controllers\API\v1\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,13 +15,14 @@ Route::prefix('user')->name('user.')->group(function () {
         Route::get('/', [UserController::class, 'getUser']);
     });
 });
-Route::group(['middleware' => 'api', 'auth:api'], function () {
+Route::group(['middleware' => ['auth:api', 'api']], function () {
     Route::prefix('portfolio')->name('portfolio.')->group(function () {
+        Route::get('/', [PortfolioController::class, 'getPortfolio']);
         Route::post('add', [PortfolioController::class, 'add']);
         Route::put('update/{id}', [PortfolioController::class, 'update']);
     });
     Route::prefix('report')->name('report')->group(function () {
-        Route::post('get', [PortfolioController::class, 'get']);
+        Route::post('get', [ReportController::class, 'get']);
     });
 
 });
