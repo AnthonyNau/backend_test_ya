@@ -1,8 +1,8 @@
 ## Instructions
 - **copy .env.example data to .env**
+- **run `composer install`**
 - **run `./vendor/bin/sail up`**
 - **enter to bash `docker exec -it backend-test-ya-laravel.test-1 bash`**
-- **run `composer install`**
 - **run `php artisan migrate`**
 - **run `php artisan queue:work` (need for import csv job)**
 - **run ` php artisan scribe:generate` for API documentation (http://localhost/docs/index.html)**
