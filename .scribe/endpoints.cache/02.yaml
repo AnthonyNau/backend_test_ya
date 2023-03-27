@@ -96,11 +96,11 @@ endpoints:
         name: id
         description: 'The ID of the update.'
         required: true
-        example: excepturi
+        example: dolor
         type: string
         custom: []
     cleanUrlParameters:
-      id: excepturi
+      id: dolor
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -108,19 +108,19 @@ endpoints:
         name: symbol
         description: ''
         required: true
-        example: ullam
+        example: molestiae
         type: string
         custom: []
       number_of_shares:
         name: number_of_shares
         description: 'Must be at least 0.'
         required: true
-        example: 30
+        example: 42
         type: number
         custom: []
     cleanBodyParameters:
-      symbol: ullam
-      number_of_shares: 30
+      symbol: molestiae
+      number_of_shares: 42
     fileParameters: []
     responses: []
     responseFields: []

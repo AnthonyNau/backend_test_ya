@@ -27,21 +27,21 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: aliquam
+        example: autem
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: abdul.borer@example.org
+        example: huel.andrew@example.com
         type: string
         custom: []
       password:
         name: password
         description: 'Must match the regex /[a-z]/. Must match the regex /[A-Z]/. Must match the regex /[0-9]/. Must be at least 8 characters.'
         required: true
-        example: "2eQty'30%c]"
+        example: 'OF:Ot3zy1mYO0zIg34Yz'
         type: string
         custom: []
       portfolio:
@@ -56,24 +56,24 @@ endpoints:
         name: 'portfolio[].symbol'
         description: ''
         required: false
-        example: rerum
+        example: sint
         type: string
         custom: []
       'portfolio[].number_of_shares':
         name: 'portfolio[].number_of_shares'
         description: 'Must be at least 0.'
         required: false
-        example: 34
+        example: 48
         type: number
         custom: []
     cleanBodyParameters:
-      name: aliquam
-      email: abdul.borer@example.org
-      password: "2eQty'30%c]"
+      name: autem
+      email: huel.andrew@example.com
+      password: 'OF:Ot3zy1mYO0zIg34Yz'
       portfolio:
         -
-          symbol: rerum
-          number_of_shares: 34
+          symbol: sint
+          number_of_shares: 48
     fileParameters: []
     responses: []
     responseFields: []
@@ -108,19 +108,19 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: smith.glennie@example.net
+        example: sterling.stamm@example.com
         type: string
         custom: []
       password:
         name: password
         description: 'Must match the regex /[a-z]/. Must match the regex /[A-Z]/. Must match the regex /[0-9]/. Must be at least 8 characters.'
         required: true
-        example: FZR6RH2^h_S=7vT
+        example: '}^a.FgO'
         type: string
         custom: []
     cleanBodyParameters:
-      email: smith.glennie@example.net
-      password: FZR6RH2^h_S=7vT
+      email: sterling.stamm@example.com
+      password: '}^a.FgO'
     fileParameters: []
     responses: []
     responseFields: []

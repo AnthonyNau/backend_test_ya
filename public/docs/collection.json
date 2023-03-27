@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "78dcdfff-e498-4cc5-85a1-1c2df7526a12",
+        "_postman_id": "d979af01-768a-4e52-98e4-623cb8936efa",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -300,7 +300,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "excepturi",
+                                    "value": "dolor",
                                     "description": "The ID of the update."
                                 }
                             ]
@@ -318,7 +318,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"symbol\":\"ullam\",\"number_of_shares\":30}"
+                            "raw": "{\"symbol\":\"molestiae\",\"number_of_shares\":42}"
                         },
                         "description": "",
                         "auth": {
@@ -355,7 +355,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"symbol\":\"necessitatibus\",\"date\":\"2023-03-23T22:28:32\"}"
+                            "raw": "{\"symbol\":\"libero\",\"date\":\"2023-03-27T14:01:51\"}"
                         },
                         "description": "",
                         "auth": {
@@ -392,7 +392,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"aliquam\",\"email\":\"abdul.borer@example.org\",\"password\":\"2eQty'30%c]\",\"portfolio\":[{\"symbol\":\"rerum\",\"number_of_shares\":34}]}"
+                            "raw": "{\"name\":\"autem\",\"email\":\"huel.andrew@example.com\",\"password\":\"OF:Ot3zy1mYO0zIg34Yz\",\"portfolio\":[{\"symbol\":\"sint\",\"number_of_shares\":48}]}"
                         },
                         "description": "",
                         "auth": {
@@ -423,7 +423,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"smith.glennie@example.net\",\"password\":\"FZR6RH2^h_S=7vT\"}"
+                            "raw": "{\"email\":\"sterling.stamm@example.com\",\"password\":\"}^a.FgO\"}"
                         },
                         "description": "",
                         "auth": {

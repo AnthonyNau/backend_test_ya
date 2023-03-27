@@ -27,19 +27,19 @@ endpoints:
         name: symbol
         description: ''
         required: false
-        example: necessitatibus
+        example: libero
         type: string
         custom: []
       date:
         name: date
         description: 'Must be a valid date.'
         required: false
-        example: '2023-03-23T22:28:32'
+        example: '2023-03-27T14:01:51'
         type: string
         custom: []
     cleanBodyParameters:
-      symbol: necessitatibus
-      date: '2023-03-23T22:28:32'
+      symbol: libero
+      date: '2023-03-27T14:01:51'
     fileParameters: []
     responses: []
     responseFields: []
