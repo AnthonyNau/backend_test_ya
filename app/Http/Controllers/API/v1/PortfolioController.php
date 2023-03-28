@@ -5,8 +5,11 @@ namespace App\Http\Controllers\API\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\v1\ModifyPortfolioRequest;
 use App\Http\Requests\v1\PortfolioRequest;
+use App\Models\Portfolio;
 use App\Repositories\v1\PortfolioRepository;
 use App\Services\v1\PortfolioService;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\JsonResponse;
 
 /**
  * @group Portfolio
@@ -14,8 +17,12 @@ use App\Services\v1\PortfolioService;
  */
 class PortfolioController extends Controller
 {
-    public function __construct(private PortfolioService $portfolioService, private PortfolioRepository $portfolioRepository)
+    public function __construct(
+        private readonly PortfolioService    $portfolioService,
+        private readonly PortfolioRepository $portfolioRepository
+    )
     {
+        //
     }
 
 
@@ -23,11 +30,12 @@ class PortfolioController extends Controller
      * Add portfolio
      *
      * @param PortfolioRequest $portfolioRequest
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function add(PortfolioRequest $portfolioRequest): \Illuminate\Http\JsonResponse
+    public function add(PortfolioRequest $portfolioRequest): JsonResponse
     {
         $data = $portfolioRequest->validated();
+
         return $this->portfolioService->handleAdd($data, auth()->user());
     }
 
@@ -35,19 +43,20 @@ class PortfolioController extends Controller
      * Modify portfolio
      * @param ModifyPortfolioRequest $modifyPortfolioRequest
      * @param $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function update(ModifyPortfolioRequest $modifyPortfolioRequest, $id): \Illuminate\Http\JsonResponse
+    public function update(ModifyPortfolioRequest $modifyPortfolioRequest, $id): JsonResponse
     {
         $data = $modifyPortfolioRequest->validated();
+
         return $this->portfolioService->handlerModify($data, $id);
     }
 
     /**
      * Get User portfolio
-     * @return mixed
+     * @return Collection|Portfolio
      */
-    public function getPortfolio(): mixed
+    public function getPortfolio(): Collection|Portfolio
     {
         return $this->portfolioRepository->getUserPortfolio(auth()->user());
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\v1\FileRequest;
 use App\Jobs\v1\DataSet\ImportDataSetJob;
+use Illuminate\Http\JsonResponse;
 
 /**
  * @group Import csv
@@ -15,9 +16,9 @@ class DataSetController extends Controller
     /**
      * Import csv
      * @param FileRequest $fileRequest
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function import(FileRequest $fileRequest): \Illuminate\Http\JsonResponse
+    public function import(FileRequest $fileRequest): JsonResponse
     {
         $file = $fileRequest->file('file');
 
