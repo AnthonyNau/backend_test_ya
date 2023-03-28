@@ -8,28 +8,45 @@ use stdClass;
 
 class ReportService
 {
-    public function __construct(private PortfolioRepository $portfolioRepository, private DataSetRepository $dataSetRepository)
+    public function __construct(
+        private readonly PortfolioRepository $portfolioRepository,
+        private readonly DataSetRepository   $dataSetRepository
+    )
     {
+        //
     }
 
     /**
      * @param $data
      * @return array
      */
-    public function handlerGet($data)
+    public function handlerGet($data): array
     {
-        $userPortfolioSymbols = empty($data['symbol']) ? $this->portfolioRepository->getUserPortfolioSymbol(auth()->user()) : [$data['symbol']];
+        $userPortfolioSymbols = empty($data['symbol'])
+            ? $this
+                ->portfolioRepository
+                ->getUserPortfolioSymbol(auth()->user())
+            : [$data['symbol']];
         $date = $data['date'] ?? null;
         $report = [];
+
         foreach ($userPortfolioSymbols as $symbol) {
             $firstDataSets = $this->dataSetRepository->firstDataSetBySymbol($symbol);
-            $currentDataSets = $date ? $this->dataSetRepository->dataSetByDateSymbol($symbol, $date) : $this->dataSetRepository->lastDataSetBySymbol($symbol);
+            $currentDataSets = $date
+                ? $this
+                    ->dataSetRepository
+                    ->dataSetByDateSymbol($symbol, $date)
+                : $this
+                    ->dataSetRepository
+                    ->lastDataSetBySymbol($symbol);
 
             $numberOfShares = $this->portfolioRepository->getUserPortfolioBySymbol(auth()->user(), $symbol);
             $report[$symbol] = $this->calculate($numberOfShares, $firstDataSets, $currentDataSets);
 
         }
+
         $report['portfolio_value'] = $this->calculateTotalPortfolioValue($report);
+
         return $report;
     }
 
@@ -39,7 +56,7 @@ class ReportService
      * @param $currentDataSets
      * @return stdClass
      */
-    private function calculate($numberOfShares, $firstDataSets, $currentDataSets)
+    private function calculate($numberOfShares, $firstDataSets, $currentDataSets): stdClass
     {
         $result = new stdClass();
         $result->firstAvailableDateValue = $numberOfShares * $firstDataSets->price;
@@ -54,7 +71,7 @@ class ReportService
      * @param $portfolio
      * @return stdClass
      */
-    private function calculateTotalPortfolioValue($portfolio)
+    private function calculateTotalPortfolioValue($portfolio): stdClass
     {
         $result = new stdClass();
 
@@ -64,9 +81,11 @@ class ReportService
         foreach ($portfolio as $val) {
             $totalCurrentValue += $val->currentValue;
         }
+
         foreach ($portfolio as $val) {
             $totalFirstValue += $val->firstAvailableDateValue;
         }
+
         $result->totalCurrentValue = $totalCurrentValue;
         $result->totalfirstAvailableDateValue = $totalFirstValue;
         $result->changeDifValue = $totalCurrentValue - $totalFirstValue;

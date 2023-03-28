@@ -3,7 +3,11 @@
 namespace App\Repositories\v1;
 
 use App\Models\DataSet;
+use Exception;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
+use stdClass;
 
 class DataSetRepository
 {
@@ -15,17 +19,18 @@ class DataSetRepository
     {
         try {
             DataSet::where('symbol', $symbol)->firstOrFail();
-            return true;
-        } catch (\Exception) {
+        } catch (Exception) {
             return false;
         }
+
+        return true;
     }
 
     /**
      * @param $symbol
-     * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Query\Builder|object|null
+     * @return Model|Builder|stdClass|null
      */
-    public function firstDataSetBySymbol($symbol)
+    public function firstDataSetBySymbol($symbol): Model|Builder|stdClass|null
     {
         return DB::table('data_sets')
             ->where('symbol', $symbol)
@@ -35,9 +40,9 @@ class DataSetRepository
 
     /**
      * @param $symbol
-     * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Query\Builder|object|null
+     * @return Model|Builder|stdClass|null
      */
-    public function lastDataSetBySymbol($symbol)
+    public function lastDataSetBySymbol($symbol): Model|Builder|stdClass|null
     {
         return DB::table('data_sets')
             ->where('symbol', $symbol)
@@ -48,9 +53,9 @@ class DataSetRepository
     /**
      * @param $symbol
      * @param $date
-     * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Query\Builder|object|null
+     * @return Model|Builder|stdClass|null
      */
-    public function dataSetByDateSymbol($symbol, $date)
+    public function dataSetByDateSymbol($symbol, $date): Model|Builder|stdClass|null
     {
         return DB::table('data_sets')
             ->where('symbol', $symbol)

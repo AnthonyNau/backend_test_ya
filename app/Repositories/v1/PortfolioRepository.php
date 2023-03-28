@@ -3,35 +3,41 @@
 namespace App\Repositories\v1;
 
 use App\Models\Portfolio;
+use Exception;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 
 class PortfolioRepository
 {
 
     /**
      * @param $user
-     * @return mixed
+     * @return Portfolio|Collection
      */
-    public function getUserPortfolio($user)
+    public function getUserPortfolio($user): Portfolio|Collection
     {
         return Portfolio::where('user_id', $user->id)->get();
     }
 
     /**
      * @param $id
-     * @return mixed
+     * @return Portfolio
+     * @throws Exception
      */
-    public function getPortfolio($id)
+    public function getPortfolio($id): Portfolio
     {
         return Portfolio::findOrFail($id);
     }
 
     /**
      * @param $user
-     * @return mixed
+     * @return array
      */
-    public function getUserPortfolioSymbol($user)
+    public function getUserPortfolioSymbol($user): array
     {
-        return Portfolio::where('user_id', $user->id)->pluck('symbol')->toArray();
+        return Portfolio::where('user_id', $user->id)
+            ->pluck('symbol')
+            ->toArray();
     }
 
     /**
@@ -39,10 +45,10 @@ class PortfolioRepository
      * @param $symbol
      * @return mixed
      */
-    public function getUserPortfolioBySymbol($user, $symbol)
+    public function getUserPortfolioBySymbol($user, $symbol): mixed
     {
-        return Portfolio::
-        where('user_id', $user->id)->
-        where('symbol', $symbol)->value('number_of_shares');
+        return Portfolio::where('user_id', $user->id)
+            ->where('symbol', $symbol)
+            ->value('number_of_shares');
     }
 }
