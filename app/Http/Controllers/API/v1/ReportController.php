@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\v1\ReportRequest;
 use App\Services\v1\ReportService;
+use Illuminate\Http\JsonResponse;
 
 /**
  * @group Report
@@ -19,11 +20,12 @@ class ReportController extends Controller
     /**
      * Get report
      * @param ReportRequest $reportRequest
-     * @return array
+     * @return JsonResponse
      */
-    public function get(ReportRequest $reportRequest): array
+    public function get(ReportRequest $reportRequest): JsonResponse
     {
 
-        return $this->reportService->handlerGet($reportRequest->all());
+        $response = $this->reportService->handlerGet($reportRequest->all());
+        return response()->json($response);
     }
 }

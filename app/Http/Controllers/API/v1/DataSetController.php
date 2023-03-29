@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API\v1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\v1\FileRequest;
-use App\Jobs\v1\DataSet\ImportDataSetJob;
+use App\Services\v1\DataSetService;
 use Illuminate\Http\JsonResponse;
 
 /**
@@ -13,6 +13,13 @@ use Illuminate\Http\JsonResponse;
  */
 class DataSetController extends Controller
 {
+    public function __construct(
+        private readonly DataSetService $dataSetService
+    )
+    {
+        //
+    }
+
     /**
      * Import csv
      * @param FileRequest $fileRequest
@@ -25,20 +32,6 @@ class DataSetController extends Controller
         if (!$file) {
             return response()->json(['error' => 'File not loaded'], 400);
         }
-        $fileName = $this->saveFile($file);
-        dispatch(new ImportDataSetJob($fileName));
-
-        return response()->json(['message' => 'Data set is uploading'], 200);
-    }
-
-    /**
-     * Save file
-     * @param $file
-     * @return mixed
-     */
-    public function saveFile($file): mixed
-    {
-        $fileName = time() . '_' . $file->getClientOriginalName();
-        return $file->storeAs('uploads', $fileName);
+        return $this->dataSetService->handlerImport($file);
     }
 }
